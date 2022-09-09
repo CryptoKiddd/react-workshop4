@@ -1,25 +1,40 @@
-import logo from './logo.svg';
+import Second from './davaleba-2/Second'
 import './App.css';
+import Child from './Child/Child';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import React, { Component } from 'react'
+
+export default class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+     showUserslist: true
+    };
+    }
+  handleList = () => {
+    this.setState(  prevState => ({showUserslist: !prevState.showUserslist})  );
+
+    }
+  render() {
+    return (
+      <div className='wrapper'>
+
+        {/* pirveli davalebaa */}
+
+        {/* {this.state.showUserslist && <Child />}
+        <button className='toggler' onClick={this.handleList}> Toggle users </button> */}
+
+        {/* pirveli davalebis dasasruli */}
+
+
+        <Second />
+
+
+
+        </div>
+    )
+  }
 }
 
-export default App;
+
+
